@@ -1,12 +1,13 @@
 package tree;
 
 public class BinaryTreeNode {
-	private Integer data;
-	private BinaryTreeNode left;
-	private BinaryTreeNode right;
-	
+	Integer data;
+	BinaryTreeNode left;
+	 BinaryTreeNode right;
+	 int numOfNodesInSubtree;
 	public BinaryTreeNode(Integer num) {
 		this.data = num;
+		numOfNodesInSubtree = 0;
 	}
 
 	public Integer getData() {
@@ -37,5 +38,6 @@ public class BinaryTreeNode {
 	public String toString() {
 		return data != null ? data.toString() : "#"; 
 	}
+	
 	
 }

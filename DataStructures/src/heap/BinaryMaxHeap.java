@@ -2,16 +2,15 @@ package heap;
 
 import java.util.Arrays;
 
-public class BinaryMinHeap {
+public class BinaryMaxHeap {
 	private int[] heapArray;
 	private int currentHeapSize;
 	int maxSize;
 	
-	public BinaryMinHeap(int size) {
+	public BinaryMaxHeap(int size) {
 		maxSize  = size;
 		this.heapArray = new int[size];
 		currentHeapSize = 0;
-		Arrays.fill(heapArray, -1);
 	}
 	public boolean isEmpty() {
 	    return currentHeapSize == 0;
@@ -21,6 +20,7 @@ public class BinaryMinHeap {
 		if(currentHeapSize == maxSize){
 			return false;
 		}
+		
 		heapArray[currentHeapSize]= ele;
 		trickleUp(currentHeapSize++);
 		return true;
@@ -28,7 +28,7 @@ public class BinaryMinHeap {
 	
 	private void trickleUp(int index){
 		int parent = (index-1)/2;
-		while (parent >=0 && heapArray[parent] > heapArray[index]){
+		while (parent>= 0 && heapArray[parent] < heapArray[index]){
 			int bottomEle = heapArray[index];
 			heapArray[index] = heapArray[parent];
 			heapArray[parent] = bottomEle;
@@ -40,44 +40,37 @@ public class BinaryMinHeap {
 	public int deleteElement(){
 		int root = heapArray[0];
 		heapArray[0] = heapArray[--currentHeapSize];
-		heapArray[currentHeapSize] = -1;
 		trickleDown(0);
 		return root;
 	}
 	
 	private void trickleDown(int index){
-		int smallerChild ;
+		int largerChild ;
 		int top = heapArray[index];
 		while(index <= currentHeapSize/2){
 			int leftChild = 2*index+1;
 			int rightChild = leftChild +1;
 			
-			if(rightChild <= currentHeapSize && heapArray[leftChild] < heapArray[rightChild]){
-				smallerChild = leftChild;
+			if(rightChild <= currentHeapSize && heapArray[leftChild] > heapArray[rightChild]){
+				largerChild = leftChild;
 			}else{
-				smallerChild = rightChild;
+				largerChild = rightChild;
 			}
-			if(top < heapArray[smallerChild]){
+			if(top >= heapArray[largerChild]){
 				break;
 			}
-			heapArray[index] = heapArray[smallerChild];
-			index = smallerChild;
+			heapArray[index] = heapArray[largerChild];
+			index = largerChild;
 		}
 		heapArray[index] = top;
 	}
 	
-	public int getMin(){
+	public int getMax(){
 		return heapArray[0];
 	}
-	
-<<<<<<< HEAD
-	private trickleDown(){
-		
-	}
-=======
 	public static void main(String[] args)  {
 	    int value, value2;
-	    BinaryMinHeap h = new BinaryMinHeap(31); // make a Heap; max size 31
+	    BinaryMaxHeap h = new BinaryMaxHeap(31); // make a Heap; max size 31
 	    boolean success;
 
 	    h.insertElement(70); // inserElement 10 items
@@ -91,20 +84,20 @@ public class BinaryMinHeap {
 	    h.insertElement(10);
 	    h.insertElement(90);
 	    System.out.println("heap : " +Arrays.toString( h.heapArray));
-	    System.out.println(" Minimum :"+ h.getMin());
-	    value = 140;
-	    success = h.insertElement(value);
-	    if (!success)
-	      System.out.println("Can't inserElement; heap full");
+	    System.out.println(" Minimum :"+ h.getMax());
+	   
+	   
 	    if (!h.isEmpty()){
 	      h.deleteElement();
 	    System.out.println("heap : " +Arrays.toString( h.heapArray));
-	    System.out.println(" Minimum :"+ h.getMin());
+	    System.out.println(" Minimum :"+ h.getMax());
 	    
 	    }
 	    else
 	      System.out.println("Can't remove; heap empty");
-	    
+	    value = 140;
+	    success = h.insertElement(value);
+	    System.out.println("heap : " +Arrays.toString( h.heapArray));
+	    System.out.println(" Minimum :"+ h.getMax());
 	  }
->>>>>>> 657baffb3d55b430d53203f09b0efee7375a150e
 }
