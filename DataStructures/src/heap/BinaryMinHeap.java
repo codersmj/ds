@@ -20,5 +20,7 @@ public class BinaryMinHeap {
 	}
 	
 	
-	private 
+	private trickleDown(){
+		
+	}
 }

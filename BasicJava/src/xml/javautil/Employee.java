@@ -1,4 +1,4 @@
-package main.java;
+package xml.javautil;
 
 public class Employee {
 	private String ID;

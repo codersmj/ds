@@ -1,3 +1,4 @@
+package xml.qdxmlparser;
 import qdxml.DocHandler;
 import qdxml.QDParser;
 

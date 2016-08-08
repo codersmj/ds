@@ -1,4 +1,4 @@
-package main.solution2;
+package xml.qdxmlparser;
 
 import java.util.*;
 

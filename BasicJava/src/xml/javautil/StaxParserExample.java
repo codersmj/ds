@@ -1,4 +1,4 @@
-package main.java;
+package xml.javautil;
 
 import java.io.File;
 import java.io.FileInputStream;

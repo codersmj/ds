@@ -1,4 +1,4 @@
-package xmlparser;
+package xml.xmlparsertree;
 
 public class Driver {
 

@@ -1,4 +1,4 @@
-package jaxb;
+package xml.jaxb;
 
 
 import javax.xml.bind.*;

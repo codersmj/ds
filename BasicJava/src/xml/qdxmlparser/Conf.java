@@ -1,3 +1,4 @@
+package xml.qdxmlparser;
 import java.util.Stack;
 import java.util.Hashtable;
 import java.util.Enumeration;
