@@ -70,11 +70,7 @@ public class BinaryMinHeap {
 		return heapArray[0];
 	}
 	
-<<<<<<< HEAD
-	private trickleDown(){
-		
-	}
-=======
+
 	public static void main(String[] args)  {
 	    int value, value2;
 	    BinaryMinHeap h = new BinaryMinHeap(31); // make a Heap; max size 31
@@ -106,5 +102,4 @@ public class BinaryMinHeap {
 	      System.out.println("Can't remove; heap empty");
 	    
 	  }
->>>>>>> 657baffb3d55b430d53203f09b0efee7375a150e
 }

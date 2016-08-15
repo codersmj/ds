@@ -1,11 +1,7 @@
 package xml.qdxmlparser;
-import qdxml.DocHandler;
-import qdxml.QDParser;
-
-import java.util.Hashtable;
-import java.util.Enumeration;
-
 import java.io.FileReader;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 /** 
   This class is the most basic possible

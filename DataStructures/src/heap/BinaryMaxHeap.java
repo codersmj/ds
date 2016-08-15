@@ -11,6 +11,8 @@ public class BinaryMaxHeap {
 		maxSize  = size;
 		this.heapArray = new int[size];
 		currentHeapSize = 0;
+		Arrays.fill(heapArray, Integer.MIN_VALUE);
+
 	}
 	public boolean isEmpty() {
 	    return currentHeapSize == 0;
@@ -38,8 +40,9 @@ public class BinaryMaxHeap {
 	}
 
 	public int deleteElement(){
-		int root = heapArray[0];
+		Integer root = heapArray[0];
 		heapArray[0] = heapArray[--currentHeapSize];
+		heapArray[currentHeapSize]= Integer.MIN_VALUE;
 		trickleDown(0);
 		return root;
 	}
@@ -87,15 +90,14 @@ public class BinaryMaxHeap {
 	    System.out.println(" Minimum :"+ h.getMax());
 	   
 	   
-	    if (!h.isEmpty()){
+	    while (!h.isEmpty()){
 	      h.deleteElement();
 	    System.out.println("heap : " +Arrays.toString( h.heapArray));
 	    System.out.println(" Minimum :"+ h.getMax());
 	    
 	    }
-	    else
-	      System.out.println("Can't remove; heap empty");
 	    value = 140;
+	    
 	    success = h.insertElement(value);
 	    System.out.println("heap : " +Arrays.toString( h.heapArray));
 	    System.out.println(" Minimum :"+ h.getMax());

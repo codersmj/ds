@@ -1,14 +1,9 @@
 package xml.qdxmlparser;
-import java.util.Stack;
-import java.util.Hashtable;
-import java.util.Enumeration;
-
-import java.lang.reflect.Field;
-
-import qdxml.DocHandler;
-import qdxml.QDParser;
-
 import java.io.FileReader;
+import java.lang.reflect.Field;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Stack;
 
 /** An example of something you could do with
     the quick and dirty XML parser.  Populate
